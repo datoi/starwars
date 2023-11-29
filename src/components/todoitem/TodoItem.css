@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #282c34; /* Dark background color */
+    color: #fff; /* White text color */
+}
+
+.App {
+    width: 400px;
+    text-align: center;
+    padding: 30px;
+    background-color: #383e4a; /* Slightly lighter background color */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+    border-radius: 12px; /* Rounded corners */
+}
+
+.input {
+    width: calc(100% - 20px);
+    padding: 14px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #495057; /* Dark border */
+    border-radius: 6px;
+    background-color: #495057; /* Dark background color for input */
+    color: #fff; /* White text color for input */
+    outline: none; /* Remove default focus outline */
+}
+
+.button1 {
+    background-color: #61dafb; /* Blue button color */
+    color: #fff;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.button1:hover {
+    background-color: #2188d1; /* Darker blue on hover */
+}
+
+.p {
+    border: 1px solid #495057;
+    padding: 14px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    background-color: #495057; /* Dark background color for todo item */
+}
+
+.button2 {
+    background-color: #f44336; /* Red remove button color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.button2:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Optional: Add animation for a fade effect when removing cities */
+.p.fade-enter {
+    opacity: 0.01;
+}
+
+.p.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+h1 {
+    color: #3498db;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    border-color: #3498db;
+}
+
+.progress {
+    margin-top: 30px;
+    position: relative;
+    height: 25px;
+    background: #C0C0C0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(to right,  #e74c3c, #9b59b6);
+    transition: width 0.5s ease-in-out;
+    position: relative;
+    animation: progressAnimation 1s ease-in-out;
+}
+
+.percent {
+    color: #fff;
+    font-weight: bold;
+}
+
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+}
