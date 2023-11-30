@@ -1,20 +1,33 @@
 import './TodoItem.css'
+
 function TodoItem(props) {
-    const {count,handleChange,value, addTodo, add, removeTodo} = props
+    const {showButton,countDown, time, count, handleChange, value, addTodo, add, removeTodo} = props
     return (
-        <div className="App">
+        <div className='App'>
             <h1>Day Plan</h1>
-            <input className='input' value={value} onChange={handleChange} type="text" />
+
+            <div className="container">
+            <input className='input' value={value} onChange={handleChange} type="text"/>
             <button className='button1' onClick={addTodo}>add</button>
-            {add.map((city, index) => (
-                <p className='p' key={index}>{city} <button className='button2' onClick={() => removeTodo(city)}>X</button></p>
-            ))}
-            <div className="progress" data-label={`${count*10}%`}>
-          <span className="value" style={{ width: `${count*10}%` }}>
+            <div className='todoList'>
+                {add.map((todo, index) => (
+                    <p className='p' key={index}>{todo}
+                        <button className='button2' onClick={() => removeTodo(todo)}>X</button>
+                    </p>
+                ))}
+            </div>
+            <div className="progress" data-label={`${count * 10}%`}>
+          <span className="value" style={{width: `${count * 10}%`}}>
             <span className="percent">{count}</span>
           </span>
+
             </div>
             <p>Maximum 10</p>
+            </div>
+            <div className='countDown'>
+                {showButton && <button className='button1' onClick={countDown}>Start Plan Timer</button>}
+                <h3>{time} hours remaining</h3>
+            </div>
 
         </div>
     )

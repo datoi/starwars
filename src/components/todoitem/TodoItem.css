@@ -1,21 +1,21 @@
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0;
+    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #282c34; /* Dark background color */
-    color: #fff; /* White text color */
+    background-color: #282c34;
+    color: #fff;
 }
+
 
 .App {
     width: 400px;
     text-align: center;
     padding: 30px;
-    background-color: #383e4a; /* Slightly lighter background color */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
-    border-radius: 12px; /* Rounded corners */
+    background-color: #383e4a;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
 }
 
 .input {
@@ -23,52 +23,52 @@ body {
     padding: 14px;
     margin-bottom: 20px;
     box-sizing: border-box;
-    border: 1px solid #495057; /* Dark border */
+    border: 1px solid #495057;
     border-radius: 6px;
-    background-color: #495057; /* Dark background color for input */
-    color: #fff; /* White text color for input */
-    outline: none; /* Remove default focus outline */
+    background-color: #495057;
+    color: #fff;
+    outline: none;
 }
 
 .button1 {
-    background-color: #61dafb; /* Blue button color */
+    background-color: #61dafb;
     color: #fff;
     padding: 14px;
     border: none;
     cursor: pointer;
     border-radius: 6px;
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    transition: background-color 0.3s ease;
 }
 
 .button1:hover {
-    background-color: #2188d1; /* Darker blue on hover */
+    background-color: #2188d1;
 }
 
 .p {
     border: 1px solid #495057;
     padding: 14px;
-    margin: 10px 0;
+    margin: 30px 0 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 6px;
-    background-color: #495057; /* Dark background color for todo item */
+    background-color: #495057;
 }
 
 .button2 {
-    background-color: #f44336; /* Red remove button color */
+    background-color: #f44336;
     color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 6px;
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    transition: background-color 0.3s ease;
 }
 
 .button2:hover {
-    background-color: #d32f2f; /* Darker red on hover */
+    background-color: #d32f2f;
 }
 
-/* Optional: Add animation for a fade effect when removing cities */
+
 .p.fade-enter {
     opacity: 0.01;
 }
