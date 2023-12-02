@@ -1,7 +1,7 @@
 import './App.css';
 import TodoList from "./components/TodoList";
 import RegistrationPage from "./components/registration/RegistrationPage";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import Login from "./components/login/Login";
 import HomePage from "./components/homepage/HomePage";
 // import TodoItem from "./components/todoitem/TodoItem";
@@ -10,14 +10,14 @@ import HomePage from "./components/homepage/HomePage";
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path='/registration'element={<RegistrationPage />}/>
                 <Route path='login' element={<Login/>}/>
                 <Route path='todoitem' element={<TodoList/>}/>
                 <Route path='homepage' element={<HomePage/>}/>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
