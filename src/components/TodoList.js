@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from "react";
 import TodoItem from "./todoitem/TodoItem";
-
 function TodoList() {
     const [add, setAdd] = useState([]);
     const [value, setValue] = useState("");
     const [count, setCount] = useState(0);
     const [time, setTime] = useState(24);
     const [showButton, setShowButton] = useState(true);
-
     useEffect(() => {
         const savedAdd = JSON.parse(localStorage.getItem("todos")) || [];
         const savedCountdown = JSON.parse(localStorage.getItem("countdown")) || { time: 24, showButton: true };
-
         setAdd(savedAdd);
         setCount(savedAdd.length);
         setTime(savedCountdown.time);
         setShowButton(savedCountdown.showButton);
     }, []);
-
     const handleChange = (event) => {
         setValue(event.target.value);
     };
-
     const addTodo = () => {
         if (add.length < 10) {
             const newTodos = [...add, value];
@@ -31,14 +26,12 @@ function TodoList() {
             localStorage.setItem("todos", JSON.stringify(newTodos));
         }
     };
-
     const removeTodo = (todoToRemove) => {
         const newTodo = add.filter((todo) => todo !== todoToRemove);
         setAdd(newTodo);
         setCount(newTodo.length);
         localStorage.setItem("todos", JSON.stringify(newTodo));
     };
-
     const countDown = () => {
         setTimeout(() => {
             const timer = setInterval(() => {
@@ -50,12 +43,11 @@ function TodoList() {
                 setAdd([]);
                 setCount(0);
                 setShowButton(true);
-                setTime(10);
+                setTime(24);
                 localStorage.removeItem("todos");
-                localStorage.setItem("countdown", JSON.stringify({ time: 10, showButton: true }));
+                localStorage.setItem("countdown", JSON.stringify({ time: 24, showButton: true }));
             }, 2000 * 30 * 24);
         }, 0);
-
         setShowButton(!showButton);
         localStorage.setItem("countdown", JSON.stringify({ time, showButton: !showButton }));
     };
@@ -66,8 +58,6 @@ function TodoList() {
         setShowButton(true);
         setTime(24);
     };
-
-
     return (
         <div>
             <TodoItem
@@ -85,5 +75,4 @@ function TodoList() {
         </div>
     );
 }
-
 export default TodoList;

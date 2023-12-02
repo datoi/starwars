@@ -3,12 +3,12 @@ import './TodoItem.css'
 function TodoItem(props) {
     const {resetClick, showButton, countDown, time, count, handleChange, value, addTodo, add, removeTodo} = props
     return (
+
         <body>
         <button className='refreshButton' onClick={resetClick}>Refresh</button>
         <div className='front'>
             <div className='App'>
                 <h1>Day Plan</h1>
-
                 <div className="container">
                     <input className='input' value={value} onChange={handleChange} type="text"/>
                     <button className='button1' onClick={addTodo}>add</button>

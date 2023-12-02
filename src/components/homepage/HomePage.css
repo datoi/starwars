@@ -1,0 +1,36 @@
+.homepage-container {
+    background-color: #282c34;
+    padding: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+.header {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+.description {
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #61dafb;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2188d1;
+}

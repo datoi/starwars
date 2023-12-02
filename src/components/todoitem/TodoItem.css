@@ -4,11 +4,11 @@ body{
 }
 .front {
     font-family: 'Roboto', sans-serif;
-    margin-top: 100px;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     color: #fff;
+    height: 100vh;
 }
 
 
