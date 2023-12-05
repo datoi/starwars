@@ -10,7 +10,7 @@ body {
 
 .container {
     width: 50%;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
 }
 .description{
     text-align: start;
