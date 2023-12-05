@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './RegistrationPage.css';
+import axios from "axios";
 
 const RegistrationPage = () => {
     const [email, setEmail] = useState('');
@@ -7,9 +8,11 @@ const RegistrationPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Email:', email);
-        console.log('Password:', password);
     };
+
+    const axiosInstance = axios.create({
+        baseURL: 'https://swapi.dev/api/',
+    })
 
     return (
         <div className="registration-container">
@@ -25,7 +28,7 @@ const RegistrationPage = () => {
                         required
                     />
                 </label>
-                <br />
+                <br/>
                 <label>
                     Password:
                     <input
@@ -36,11 +39,10 @@ const RegistrationPage = () => {
                         required
                     />
                 </label>
-                <br />
-                <button className="button1" type="submit">
-                    Register
-                </button>
+                <br/>
+                <button onClick={registerClick} className='button'>Register</button>
             </form>
+
         </div>
     );
 };

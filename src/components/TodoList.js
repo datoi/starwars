@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import TodoItem from "./todoitem/TodoItem";
+
 function TodoList() {
     const [add, setAdd] = useState([]);
     const [value, setValue] = useState("");
@@ -8,7 +9,7 @@ function TodoList() {
     const [showButton, setShowButton] = useState(true);
     useEffect(() => {
         const savedAdd = JSON.parse(localStorage.getItem("todos")) || [];
-        const savedCountdown = JSON.parse(localStorage.getItem("countdown")) || { time: 24, showButton: true };
+        const savedCountdown = JSON.parse(localStorage.getItem("countdown")) || {time: 24, showButton: true};
         setAdd(savedAdd);
         setCount(savedAdd.length);
         setTime(savedCountdown.time);
@@ -18,7 +19,7 @@ function TodoList() {
         setValue(event.target.value);
     };
     const addTodo = () => {
-        if (add.length < 10) {
+        if (add.length < 10 && value.length > 0) {
             const newTodos = [...add, value];
             setAdd(newTodos);
             setValue("");
@@ -45,11 +46,11 @@ function TodoList() {
                 setShowButton(true);
                 setTime(24);
                 localStorage.removeItem("todos");
-                localStorage.setItem("countdown", JSON.stringify({ time: 24, showButton: true }));
+                localStorage.setItem("countdown", JSON.stringify({time: 24, showButton: true}));
             }, 2000 * 30 * 24);
         }, 0);
         setShowButton(!showButton);
-        localStorage.setItem("countdown", JSON.stringify({ time, showButton: !showButton }));
+        localStorage.setItem("countdown", JSON.stringify({time, showButton: !showButton}));
     };
     const resetClick = () => {
         localStorage.clear();
@@ -58,6 +59,7 @@ function TodoList() {
         setShowButton(true);
         setTime(24);
     };
+
     return (
         <div>
             <TodoItem
@@ -72,7 +74,9 @@ function TodoList() {
                 showButton={showButton}
                 resetClick={resetClick}
             />
+
         </div>
     );
 }
+
 export default TodoList;

@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './Login.css';
+
+
 const Login = () => {
+    // const pageSwitch = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Email:', email);
-        console.log('Password:', password);
-    };
-
+    }
     return (
         <div className="login-container">
             <h1 className="header">Login Page</h1>
@@ -24,7 +24,7 @@ const Login = () => {
                         required
                     />
                 </label>
-                <br />
+                <br/>
                 <label>
                     Password:
                     <input
@@ -35,8 +35,8 @@ const Login = () => {
                         required
                     />
                 </label>
-                <br />
-                <button className="button1" type="submit">
+                <br/>
+                <button className="button" type="submit">
                     Login
                 </button>
             </form>
