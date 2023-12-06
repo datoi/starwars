@@ -1,47 +1,44 @@
-import React, {useState} from 'react';
-import './Login.css';
-
+import axios from 'axios';
+import { useState } from 'react';
 
 const Login = () => {
-    // const pageSwitch = useNavigate()
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [selectedVariant, setSelectedVariant] = useState('');
+    const [selectedVariantName, setSelectedVariantName] = useState('');
+    const [selectedVariantDetails, setSelectedVariantDetails] = useState({});
+    const [selectedVariantImage, setSelectedVariantImage] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    }
-    return (
-        <div className="login-container">
-            <h1 className="header">Login Page</h1>
-            <form className="form" onSubmit={handleSubmit}>
-                <label>
-                    Email:
-                    <input
-                        className="input"
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </label>
-                <br/>
-                <label>
-                    Password:
-                    <input
-                        className="input"
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </label>
-                <br/>
-                <button className="button" type="submit">
-                    Login
-                </button>
-            </form>
-        </div>
-    );
+    const handleVariantClick = async (variant, image) => {
+        setSelectedVariant(variant);
+
+        const response = await axios.get(`https://swapi.dev/api/${variant}`);
+        const data = response.data;
+        let info = {
+            name: data.name,
+            height: data.height,
+            mass: data.mass,
+            hairColor: data.hair_color,
+        };
+
+        setSelectedVariantDetails(info);
+        setSelectedVariantName(info.name);
+        setSelectedVariantImage(image);
+    };
+
+    const variants = [
+        { variant: 'people/1/', variantName: 'Skywalker', image: 'skywalker.png' },
+        { variant: 'people/2/', variantName: 'C-3PO', image: 'C-3PO_EP3.webp' },
+        { variant: 'people/3/', variantName: 'R2-D2', image: 'r2d2.gif' },
+        { variant: 'people/4/', variantName: 'Darth Vader', image: 'darthvader.gif' },
+    ];
+
+    return {
+        selectedVariant,
+        selectedVariantName,
+        selectedVariantDetails,
+        selectedVariantImage,
+        handleVariantClick,
+        variants,
+    };
 };
 
 export default Login;
