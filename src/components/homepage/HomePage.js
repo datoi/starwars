@@ -9,12 +9,19 @@ const HomePage = () => {
         selectedVariantDetails,
         selectedVariantImage,
         selectedVariantBackground,
+        selectedVariantStory,
+        storyRef,
+        crawlContainerRef,
         handleVariantClick,
         variants,
     } = Login();
     const bodyStyle = {
         backgroundImage: selectedVariant ? `url(${process.env.PUBLIC_URL}/${selectedVariantImage})` : 'none',
     };
+
+
+
+
 
     return (
         <body style={bodyStyle}>
@@ -25,7 +32,7 @@ const HomePage = () => {
                     <ul>
                         {variants.map((item, index) => (
                             <button key={index}
-                                    onClick={() => handleVariantClick(item.variant, item.background, item.image)}>
+                                    onClick={() => handleVariantClick(item.variant, item.background, item.image, item.story)}>
                                 <strong>{item.variantName}</strong>
                             </button>
                         ))}
@@ -40,7 +47,7 @@ const HomePage = () => {
                             <div className='description'>
                                 <div>
                                     <div>
-                                        <h3>Details:</h3>
+                                        <h2>Details:</h2>
                                         <p>Name: {selectedVariantDetails.name}</p>
                                         <p>Height: {selectedVariantDetails.height}</p>
                                         <p>Mass: {selectedVariantDetails.mass}</p>
@@ -60,17 +67,9 @@ const HomePage = () => {
             </div>
             <div className="star-wars-body">
                 <div className="story-container">
-                    <div className="crawl-container">
-                        <p className='story'>
-                            May the Force be with you, young Jedi, as you traverse the boundless expanse of the galaxy,
-                            where the celestial bodies bear witness to an eternal conflict between the forces of light
-                            and the shadows of the dark side. Amidst the cosmic ballet of stars, your destiny unfolds as
-                            Luke Skywalker, a beacon of hope in the vastness of uncertainty. The weight of the Rebellion
-                            and the collective aspirations of countless beings converge upon your shoulders, and in this
-                            pivotal moment, meticulous preparation becomes not only advisable but an absolute
-                            imperative. Let us delve deeper into the profound significance of each task on your
-                            checklist, understanding how these seemingly mundane to-dos become the linchpins of survival
-                            for the galaxy's last hope
+                    <div ref={crawlContainerRef} className="crawl-container">
+                         <p className='story' ref={storyRef}>
+                            {selectedVariantStory}
                         </p>
                     </div>
                 </div>

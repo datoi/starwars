@@ -1,5 +1,5 @@
 body {
-    background:  url("/public/star-wars-background-full-hd-459613.jpg") center;
+    background: url("/public/star-wars-background-full-hd-459613.jpg") center;
     height: 100vh;
     background-size: cover;
     color: #ffd700;
@@ -7,9 +7,11 @@ body {
     text-align: center;
     margin: 0;
 }
-.bigBox{
+
+.bigBox {
     display: flex;
 }
+
 .container {
     text-align: start;
     width: 50%;
@@ -24,7 +26,6 @@ h2 {
     letter-spacing: 2px;
     text-shadow: 2px 2px 3px #000;
     transition: color 0.3s;
-    border-bottom: 2px solid #ffd700;
 }
 
 ul {
@@ -73,7 +74,6 @@ strong {
 }
 
 strong::after {
-    content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -83,7 +83,7 @@ strong::after {
     background-color: #ffd700;
 }
 .star-wars-body {
-    background-color: rgba(0, 0, 0, 0.4); /* Dim background color */
+    background-color: rgba(0, 0, 0, 0.4);
     height: 100vh;
     overflow: hidden;
 }
@@ -91,36 +91,20 @@ strong::after {
 .story-container {
     width: 60%;
     margin: auto;
+    overflow: hidden;
 }
 
 .crawl-container {
     position: relative;
-    height: 100vh;
+    height: 100%;
     font-family: 'Arial', sans-serif;
     color: yellow;
     font-size: 20px;
     line-height: 1.5;
-    animation: crawl 60s linear infinite;
-}
-.story{
-    font-size: 60px;
-}
-@keyframes crawl {
-    0% {
-        transform: translateY(100vh);
-    }
-    100% {
-        transform: translateY(-150vh);
-    }
 }
 
-@keyframes crawl {
-    0% {
-        transform: translateY(100vh);
-    }
-    100% {
-        transform: translateY(-150vh);
-    }
+.story {
+    font-size: 60px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -136,9 +120,11 @@ strong::after {
     p {
         font-size: 13px;
     }
+
     .story {
         font-size: 13px;
     }
+
     ul {
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
     }
