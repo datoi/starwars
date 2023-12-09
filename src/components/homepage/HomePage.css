@@ -142,9 +142,10 @@ strong::after {
         height: 160px;
     }
     .star-wars-body {
-        height: 50vh;
+        height: 64vh;
     }
     ul {
+        margin-top: 0;
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
     }
 }

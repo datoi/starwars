@@ -22,6 +22,39 @@ const HomePage = () => {
 
     return (
         <body style={bodyStyle}>
+        <div className="container">
+            <div className="left-panel">
+                <ul>
+                    {variants.map((item, index) => (
+                        <button key={index}
+                                onClick={() => handleVariantClick(item.variant, item.background, item.image, item.story)}>
+                            <strong>{item.variantName}</strong>
+                        </button>
+                    ))}
+                </ul>
+            </div>
+            {selectedVariant ? (
+                <div className="right-panel">
+                    <div>
+                        <div className='description'>
+                            <div>
+                                <div>
+                                    <p>Name: {selectedVariantDetails.name}</p>
+                                    <p>Height: {selectedVariantDetails.height}</p>
+                                    <p>Mass: {selectedVariantDetails.mass}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src={`${process.env.PUBLIC_URL}/${selectedVariantBackground}`}
+                                     alt="Selected Variant"/>
+                            </div>
+                        </div>
+                    </div>
+                    {/*<div style={{textAlign: 'center'}}>*/}
+                    {/*    <button>select</button>*/}
+                    {/*</div>*/}
+                </div>) : null}
+        </div>
         <div className='bigBox'>
             <div className="star-wars-body">
                 <div className="story-container">
@@ -32,40 +65,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="container">
-                <div className="left-panel">
-                    <h2 style={{marginTop: '0'}}>Choose a Variant:</h2>
-                    <ul>
-                        {variants.map((item, index) => (
-                            <button key={index}
-                                    onClick={() => handleVariantClick(item.variant, item.background, item.image, item.story)}>
-                                <strong>{item.variantName}</strong>
-                            </button>
-                        ))}
-                    </ul>
-                </div>
-                {selectedVariant ? (
-                    <div className="right-panel">
-                        <div>
-                            <div className='description'>
-                                <div>
-                                    <div>
-                                        <p>Name: {selectedVariantDetails.name}</p>
-                                        <p>Height: {selectedVariantDetails.height}</p>
-                                        <p>Mass: {selectedVariantDetails.mass}</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src={`${process.env.PUBLIC_URL}/${selectedVariantBackground}`}
-                                         alt="Selected Variant"/>
-                                </div>
-                            </div>
-                        </div>
-                        {/*<div style={{textAlign: 'center'}}>*/}
-                        {/*    <button>select</button>*/}
-                        {/*</div>*/}
-                    </div>) : null}
-            </div>
+
         </div>
 
         </body>
