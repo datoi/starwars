@@ -47,13 +47,9 @@ const HomePage = () => {
                 {selectedVariant ? (
                     <div className="right-panel">
                         <div>
-                            <p>
-                                You have selected: <strong>{selectedVariantName}</strong>
-                            </p>
                             <div className='description'>
                                 <div>
                                     <div>
-                                        <h2>Details:</h2>
                                         <p>Name: {selectedVariantDetails.name}</p>
                                         <p>Height: {selectedVariantDetails.height}</p>
                                         <p>Mass: {selectedVariantDetails.mass}</p>

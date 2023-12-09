@@ -118,12 +118,10 @@ strong::after {
     }
     .container{
         width: 100%;
-
     }
     h2 {
         font-size: 30px;
     }
-
     button {
         padding: 5px 2px;
         font-size: 14px;
@@ -141,7 +139,7 @@ strong::after {
     }
     img{
         width: 130px;
-        height: 170px;
+        height: 160px;
     }
     .star-wars-body {
         height: 50vh;
