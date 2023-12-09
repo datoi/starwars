@@ -61,9 +61,9 @@ const HomePage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div style={{textAlign: 'center'}}>
-                            <button>select</button>
-                        </div>
+                        {/*<div style={{textAlign: 'center'}}>*/}
+                        {/*    <button>select</button>*/}
+                        {/*</div>*/}
                     </div>) : null}
             </div>
         </div>
