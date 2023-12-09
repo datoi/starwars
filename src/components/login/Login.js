@@ -15,7 +15,7 @@ const Login = () => {
         setSelectedVariant(variant);
         const response = await axios.get(`https://swapi.dev/api/${variant}`);
         const data = response.data;
-        let info = {
+        let info =  {
             name: data.name,
             height: data.height,
             mass: data.mass,
@@ -25,23 +25,22 @@ const Login = () => {
         setSelectedVariantBackground(background);
         setSelectedVariantImage(image)
         setSelectedVariantStory(story)
-        let position = 200;
+        let position = 70;
         let animationFrameId;
 
         const crawlText = () => {
-            position--;
+            position-= 0.2;
             storyRef.current.style.transform = `translateY(${position}vh)`;
 
-            if (position <= -500) {
-                position = 500;
+            if (position <= -1000) {
+                return null
             }
 
             animationFrameId = requestAnimationFrame(crawlText);
         };
 
-        crawlText(); // Start the crawl animation
+        crawlText();
 
-        // Cleanup function to cancel the animation frame when the component unmounts
         return () => cancelAnimationFrame(animationFrameId);
     };
 

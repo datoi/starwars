@@ -20,12 +20,18 @@ const HomePage = () => {
     };
 
 
-
-
-
     return (
         <body style={bodyStyle}>
         <div className='bigBox'>
+            <div className="star-wars-body">
+                <div className="story-container">
+                    <div ref={crawlContainerRef} className="crawl-container">
+                        <p className='story' ref={storyRef}>
+                            {selectedVariantStory}
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div className="container">
                 <div className="left-panel">
                     <h2 style={{marginTop: '0'}}>Choose a Variant:</h2>
@@ -55,7 +61,6 @@ const HomePage = () => {
                                 </div>
                                 <div>
                                     <img src={`${process.env.PUBLIC_URL}/${selectedVariantBackground}`}
-                                         style={{width: '150px', height: '150px'}}
                                          alt="Selected Variant"/>
                                 </div>
                             </div>
@@ -65,16 +70,8 @@ const HomePage = () => {
                         </div>
                     </div>) : null}
             </div>
-            <div className="star-wars-body">
-                <div className="story-container">
-                    <div ref={crawlContainerRef} className="crawl-container">
-                         <p className='story' ref={storyRef}>
-                            {selectedVariantStory}
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
+
         </body>
     );
 };

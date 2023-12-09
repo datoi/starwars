@@ -8,11 +8,16 @@ body {
     margin: 0;
 }
 
+img{
+    width: 200px;
+    height: 250px;
+}
 .bigBox {
     display: flex;
 }
 
 .container {
+    background-color: rgba(0, 0, 0, 0.2);
     text-align: start;
     width: 50%;
     padding: 20px;
@@ -89,7 +94,7 @@ strong::after {
 }
 
 .story-container {
-    width: 60%;
+    width: 70%;
     margin: auto;
     overflow: hidden;
 }
@@ -108,23 +113,39 @@ strong::after {
 }
 
 @media only screen and (max-width: 500px) {
+    .bigBox{
+        display: block;
+    }
+    .container{
+        width: 100%;
+
+    }
     h2 {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     button {
-        padding: 8px 3px;
-        font-size: 13px;
+        padding: 5px 2px;
+        font-size: 14px;
     }
 
     p {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .story {
-        font-size: 13px;
+        font-size: 50px;
     }
-
+    .container{
+        padding: 0;
+    }
+    img{
+        width: 130px;
+        height: 170px;
+    }
+    .star-wars-body {
+        height: 50vh;
+    }
     ul {
         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
     }
