@@ -22,40 +22,41 @@ const HomePage = () => {
 
     return (
         <body style={bodyStyle}>
-        <div className="container">
-            <div className="left-panel">
-                <ul>
-                    {variants.map((item, index) => (
-                        <button key={index}
-                                onClick={() => handleVariantClick(item.variant, item.background, item.image, item.story)}>
-                            <strong>{item.variantName}</strong>
-                        </button>
-                    ))}
-                </ul>
-            </div>
-            {selectedVariant ? (
-                <div className="right-panel">
-                    <div>
-                        <div className='description'>
-                            <div>
+        <div className='bigBox'>
+            <div className="container">
+                <div className="left-panel">
+                    <ul>
+                        {variants.map((item, index) => (
+                            <button key={index}
+                                    onClick={() => handleVariantClick(item.variant, item.background, item.image, item.story)}>
+                                <strong>{item.variantName}</strong>
+                            </button>
+                        ))}
+                    </ul>
+                </div>
+                {selectedVariant ? (
+                    <div className="right-panel">
+                        <div>
+                            <div className='description'>
                                 <div>
-                                    <p>Name: {selectedVariantDetails.name}</p>
-                                    <p>Height: {selectedVariantDetails.height}</p>
-                                    <p>Mass: {selectedVariantDetails.mass}</p>
+                                    <div>
+                                        <p>Name: {selectedVariantDetails.name}</p>
+                                        <p>Height: {selectedVariantDetails.height}</p>
+                                        <p>Mass: {selectedVariantDetails.mass}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src={`${process.env.PUBLIC_URL}/${selectedVariantBackground}`}
+                                         alt="Selected Variant"/>
                                 </div>
                             </div>
-                            <div>
-                                <img src={`${process.env.PUBLIC_URL}/${selectedVariantBackground}`}
-                                     alt="Selected Variant"/>
-                            </div>
                         </div>
-                    </div>
-                    {/*<div style={{textAlign: 'center'}}>*/}
-                    {/*    <button>select</button>*/}
-                    {/*</div>*/}
-                </div>) : null}
-        </div>
-        <div className='bigBox'>
+                        {/*<div style={{textAlign: 'center'}}>*/}
+                        {/*    <button>select</button>*/}
+                        {/*</div>*/}
+                    </div>) : null}
+            </div>
+
             <div className="star-wars-body">
                 <div className="story-container">
                     <div ref={crawlContainerRef} className="crawl-container">
@@ -65,9 +66,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-
         </div>
-
         </body>
     );
 };
