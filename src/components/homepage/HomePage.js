@@ -5,7 +5,6 @@ import Login from "../login/Login";
 const HomePage = () => {
     const {
         selectedVariant,
-        selectedVariantName,
         selectedVariantDetails,
         selectedVariantImage,
         selectedVariantBackground,
@@ -15,10 +14,10 @@ const HomePage = () => {
         handleVariantClick,
         variants,
     } = Login();
+
     const bodyStyle = {
         backgroundImage: selectedVariant ? `url(${process.env.PUBLIC_URL}/${selectedVariantImage})` : 'none',
     };
-
 
     return (
         <body style={bodyStyle}>
@@ -36,30 +35,24 @@ const HomePage = () => {
                 </div>
                 {selectedVariant ? (
                     <div className="right-panel">
-                        <div>
-                            <div className='description'>
+                        <div className='description'>
+                            <div>
                                 <div>
-                                    <div>
-                                        <p>Name: {selectedVariantDetails.name}</p>
-                                        <p>Height: {selectedVariantDetails.height}</p>
-                                        <p>Mass: {selectedVariantDetails.mass}</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src={`${process.env.PUBLIC_URL}/${selectedVariantBackground}`}
-                                         alt="Selected Variant"/>
+                                    <p>Name: {selectedVariantDetails.name}</p>
+                                    <p>Height: {selectedVariantDetails.height}</p>
+                                    <p>Mass: {selectedVariantDetails.mass}</p>
                                 </div>
                             </div>
+                            <div>
+                                <img src={`${process.env.PUBLIC_URL}/${selectedVariantBackground}`} alt="Selected Variant"/>
+                            </div>
                         </div>
-                        {/*<div style={{textAlign: 'center'}}>*/}
-                        {/*    <button>select</button>*/}
-                        {/*</div>*/}
                     </div>) : null}
             </div>
 
             <div className="star-wars-body">
                 <div className="story-container">
-                    <div ref={crawlContainerRef} className="crawl-container">
+                    <div className="crawl-container" ref={crawlContainerRef}>
                         <p className='story' ref={storyRef}>
                             {selectedVariantStory}
                         </p>
