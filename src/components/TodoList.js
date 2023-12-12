@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 function TodoList() {
     const [add, setAdd] = useState([]);
@@ -58,6 +59,10 @@ function TodoList() {
         setShowButton(true);
         setTime(24);
     };
+    const navigate = useNavigate()
+    const homeClick = () => {
+        navigate('/starwars')
+    }
     return {
         handleChange,
         value,
@@ -68,7 +73,8 @@ function TodoList() {
         time,
         countDown,
         showButton,
-        resetClick
+        resetClick,
+        homeClick
     };
 
 }
