@@ -7,17 +7,15 @@ const HomePage = () => {
         selectedVariant,
         selectedVariantDetails,
         selectedVariantImage,
-        selectedVariantBackground,
         selectedVariantStory,
         storyRef,
         crawlContainerRef,
         handleVariantClick,
         variants,
+        selectClick,
+        bodyStyle,
     } = Login();
 
-    const bodyStyle = {
-        backgroundImage: selectedVariant ? `url(${process.env.PUBLIC_URL}/${selectedVariantImage})` : 'none',
-    };
 
     return (
         <body style={bodyStyle}>
@@ -44,10 +42,13 @@ const HomePage = () => {
                                 </div>
                             </div>
                             <div>
-                                <img src={`${process.env.PUBLIC_URL}/${selectedVariantBackground}`} alt="Selected Variant"/>
+                                <img src={`${process.env.PUBLIC_URL}/${selectedVariantImage}`}
+                                     alt="Selected Variant"/>
                             </div>
                         </div>
+                        <button onClick={selectClick}>Select</button>
                     </div>) : null}
+
             </div>
 
             <div className="star-wars-body">

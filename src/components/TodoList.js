@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from "react";
-import TodoItem from "./todoitem/TodoItem";
+import {useState, useEffect} from "react";
 
 function TodoList() {
     const [add, setAdd] = useState([]);
@@ -19,7 +18,7 @@ function TodoList() {
         setValue(event.target.value);
     };
     const addTodo = () => {
-        if (add.length < 10 && value.length > 0) {
+        if (add.length < 6 && value.length > 0) {
             const newTodos = [...add, value];
             setAdd(newTodos);
             setValue("");
@@ -59,24 +58,19 @@ function TodoList() {
         setShowButton(true);
         setTime(24);
     };
+    return {
+        handleChange,
+        value,
+        addTodo,
+        add,
+        removeTodo,
+        count,
+        time,
+        countDown,
+        showButton,
+        resetClick
+    };
 
-    return (
-        <div>
-            <TodoItem
-                handleChange={handleChange}
-                value={value}
-                addTodo={addTodo}
-                add={add}
-                removeTodo={removeTodo}
-                count={count}
-                time={time}
-                countDown={countDown}
-                showButton={showButton}
-                resetClick={resetClick}
-            />
-
-        </div>
-    );
 }
 
 export default TodoList;

@@ -1,23 +1,21 @@
-// import RegistrationPage from "./components/registration/RegistrationPage";
-// import {BrowserRouter, Route, Routes} from "react-router-dom";
-// import Login from "./components/login/Login";
+import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import HomePage from "./components/homepage/HomePage";
-// import TodoList from "./components/TodoList";
+import TodoItem from "./components/todoitem/TodoItem";
+import './App.css'
 
 function App() {
+
+
     return (
-        // <BrowserRouter basename={"/"}>
-        //     <Routes>
-        //         <Route path='/registration' element={<RegistrationPage/>}/>
-        //         <Route path='/todoitem' element={<TodoList/>}/>
-        //         <Route path='/login' element={<Login/>}/>
-        //         <Route path='/homepage' element={<HomePage/>}/>
-        //     </Routes>
-        // </BrowserRouter>
-        <div>
-            <HomePage/>
-        </div>
-    );
+        <BrowserRouter>
+            <Routes>
+                <Route path='/starwars' element={<HomePage/>}/>
+                <Route path='/todoitem' element={<TodoItem/>}/>
+            </Routes>
+        </BrowserRouter>
+
+    )
+
 }
 
 export default App;

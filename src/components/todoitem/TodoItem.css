@@ -1,51 +1,55 @@
-body{
-    background-color: #282c34;
-
-}
 .front {
-    font-family: 'Roboto', sans-serif;
-    display: grid;
+    font-family: 'Arial', sans-serif;
+    display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #ffd700;
     height: 100vh;
+    background-size: cover;
 }
-
-
+.head{
+    display: flex;
+    justify-content: space-between;
+}
 .App {
-    width: 400px;
+    width: 50%;
     text-align: center;
-    padding: 30px;
-    background-color: #383e4a;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 0px 30px ;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
     border-radius: 12px;
 }
-.refreshButton{
-    background-color: #61dafb;
-    color: #fff;
+
+.refreshButton {
+    background-color: #001f3f;
+    color: #ffd700;
     padding: 14px;
     border: none;
     cursor: pointer;
     border-radius: 6px;
     transition: background-color 0.3s ease;
 }
-.refreshButton:hover{
-    background-color: #2188d1;
+
+.refreshButton:hover {
+    background-color: #ffd700;
+    color: #001f3f;
 }
+
 .input {
     width: calc(100% - 20px);
     padding: 14px;
     margin-bottom: 20px;
     box-sizing: border-box;
-    border: 1px solid #495057;
+    border: 1px solid #ffd700;
     border-radius: 6px;
-    background-color: #495057;
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffd700;
     outline: none;
 }
+
 .button1 {
-    background-color: #61dafb;
-    color: #fff;
+    background-color: #001f3f;
+    color: #ffd700;
     padding: 14px;
     border: none;
     cursor: pointer;
@@ -54,70 +58,74 @@ body{
 }
 
 .button1:hover {
-    background-color: #2188d1;
+    background-color: #ffd700;
+    color: #001f3f;
+}
+.todoItem{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(60px, 1fr));
 }
 
-.p {
-    border: 1px solid #495057;
-    padding: 14px;
-    margin: 30px 0 10px 0;
+.todoLists {
+    border: 1px solid #ffd700;
+    padding: 8px 0 8px 4px;
+    margin: 8px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 6px;
-    background-color: #495057;
+    background-color: rgba(0, 0, 0, 0.6);
 }
+
 .button2 {
+    padding: 4px;
     background-color: #f44336;
     color: #fff;
     border: none;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 100%;
     transition: background-color 0.3s ease;
 }
+
 .button2:hover {
     background-color: #d32f2f;
 }
-.p.fade-enter {
-    opacity: 0.01;
-}
-.p.fade-enter-active {
-    opacity: 1;
-    transition: opacity 300ms ease-in;
-}
+
 h1 {
-    color: #3498db;
+    color: #ffd700;
 }
-form {
+
+.form {
     margin-top: 20px;
 }
+
 label {
     display: block;
     margin-bottom: 10px;
-    color: #555;
+    color: #ffd700;
 }
 
 input {
     width: 100%;
-    padding: 12px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid #ffd700;
     border-radius: 6px;
     outline: none;
     transition: border-color 0.3s ease-in-out;
     font-size: 16px;
-    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffd700;
 }
 
 input:focus {
-    border-color: #3498db;
+    border-color: #001f3f;
 }
 
 .progress {
     margin-top: 30px;
     position: relative;
     height: 25px;
-    background: #C0C0C0;
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 6px;
     overflow: hidden;
 }
@@ -128,7 +136,7 @@ input:focus {
     justify-content: center;
     height: 100%;
     border-radius: 6px;
-    background: linear-gradient(to right,  #e74c3c, #9b59b6);
+    background: linear-gradient(to right, #e74c3c, #9b59b6);
     transition: width 0.5s ease-in-out;
     position: relative;
     animation: progressAnimation 1s ease-in-out;
@@ -142,5 +150,34 @@ input:focus {
 @keyframes progressAnimation {
     from {
         width: 0;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .App {
+        width: 90%;
+        padding: 0px 15px;
+    }
+
+    .refreshButton,
+    .input,
+    .button1,
+    .todoLists,
+    .button2,
+    h1,
+    label,
+    input,
+    .progress {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    input {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .progress {
+        margin-top: 20px;
+        height: 15px;
     }
 }

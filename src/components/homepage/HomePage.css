@@ -17,7 +17,7 @@ body {
 
 .container {
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 40px;
+    padding: 40px 40px 10px 40px;
     border: 2px solid #ffd700;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
     border-radius: 10px;
@@ -115,9 +115,7 @@ strong::after {
     .bigBox {
         display: block;
     }
-    .container {
-        width: 100%;
-    }
+
     h2 {
         font-size: 30px;
     }
