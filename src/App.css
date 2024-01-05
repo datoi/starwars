@@ -1,0 +1,9 @@
+body {
+    background: url("/public/star-wars-background-full-hd-459613.jpg") center;
+    height: 100vh;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 0;
+}

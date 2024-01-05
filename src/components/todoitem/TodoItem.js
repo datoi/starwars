@@ -1,8 +1,11 @@
 import './TodoItem.css'
-import TodoList from "../TodoList";
+import TodoList from "./TodoList";
+import SelectProfile from "../homepage/SelectProfile";
 
 
 const TodoItem = () => {
+
+    const chosenName = localStorage.getItem('name')
     const {
         handleChange,
         value,
@@ -14,7 +17,7 @@ const TodoItem = () => {
         countDown,
         showButton,
         resetClick,
-        homeClick
+        homeClick,
     } = TodoList();
     return (
         <div>
@@ -29,7 +32,7 @@ const TodoItem = () => {
                 <div className='App'>
                     <div className='head'>
                         <button className='refreshButton' onClick={resetClick}>Refresh</button>
-                        <h2> Day Plan</h2>
+                        <h1>{chosenName}</h1>
                         {showButton && <button className='refreshButton' onClick={countDown}>Start Timer</button>}
                     </div>
                     <div className="container">

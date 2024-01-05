@@ -1,31 +1,33 @@
 import React from 'react';
 import './HomePage.css';
-import Login from "../login/Login";
+import SelectProfile from "./SelectProfile";
 
 const HomePage = () => {
-    const {
+    let {
+        setSelectedVariantName,
         selectedVariant,
         selectedVariantDetails,
         selectedVariantImage,
         selectedVariantStory,
-        storyRef,
-        crawlContainerRef,
         handleVariantClick,
         variants,
-        selectClick,
+        crawlContainerRef,
+        storyRef,
         bodyStyle,
-    } = Login();
+        selectClick
+    } = SelectProfile();
 
 
     return (
-        <body style={bodyStyle}>
-        <div className='bigBox'>
+        <div style={bodyStyle} className='bigBox'>
             <div className="container">
                 <div className="left-panel">
                     <ul>
                         {variants.map((item, index) => (
                             <button key={index}
-                                    onClick={() => handleVariantClick(item.variant, item.background, item.image, item.story)}>
+
+                                    onClick={() => handleVariantClick(item.variant, item.background, item.image, item.story)}
+                            >
                                 <strong>{item.variantName}</strong>
                             </button>
                         ))}
@@ -36,7 +38,7 @@ const HomePage = () => {
                         <div className='description'>
                             <div>
                                 <div>
-                                    <p>Name: {selectedVariantDetails.name}</p>
+                                    <p>Name: {setSelectedVariantName}</p>
                                     <p>Height: {selectedVariantDetails.height}</p>
                                     <p>Mass: {selectedVariantDetails.mass}</p>
                                 </div>
@@ -46,11 +48,10 @@ const HomePage = () => {
                                      alt="Selected Variant"/>
                             </div>
                         </div>
-                        <button onClick={selectClick}>Select</button>
+                        <button onClick={selectClick}>Select
+                        </button>
                     </div>) : null}
-
             </div>
-
             <div className="star-wars-body">
                 <div className="story-container">
                     <div className="crawl-container" ref={crawlContainerRef}>
@@ -61,8 +62,9 @@ const HomePage = () => {
                 </div>
             </div>
         </div>
-        </body>
     );
+
 };
+
 
 export default HomePage;

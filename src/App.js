@@ -2,10 +2,7 @@ import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import HomePage from "./components/homepage/HomePage";
 import TodoItem from "./components/todoitem/TodoItem";
 import './App.css'
-
 function App() {
-
-
     return (
         <BrowserRouter>
             <Routes>
@@ -15,7 +12,5 @@ function App() {
         </BrowserRouter>
 
     )
-
 }
-
 export default App;
